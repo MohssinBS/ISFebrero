@@ -14,7 +14,7 @@ class Alumno{
         std::list<std::string> planesinscritos;
     public:
         Alumno(const std::string& nombrecompleto,const std::string& dni,const std::string& correo,const std::string& grado,const std::string& uni);
-
+    sipnmp
 };
 
 #endif
