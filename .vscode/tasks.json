@@ -11,9 +11,9 @@
                 "-I","alumno",
                 "-I","data",
                 "-Wall","-Werror",
-                "main/main.cc",
-                "alumno/alumno.cc",
-                "data/data.cc",
+                "main/main.cpp",
+                "alumno/alumno.cpp",
+                "data/data.cpp",
             ],
             "group": {
                 "kind": "build",
@@ -22,20 +22,22 @@
             "problemMatcher": ["$gcc"],
             "detail": "Compila proyecto principal"
         },
+        
         {
             "label": "Compila tests",
             "type": "shell",
             "command": "g++",
             "args": [
+                
                 "-std=c++17",
                 "-o","program_test",
                 "-I","alumno",
                 "-I","data",
                 "-I","tests",
                 "-Wall","-Werror",
-                "tests/tests.cc",
-                "alumno/alumno.cc",
-                "data/data.cc",           
+                "tests/tests.pp",
+                "alumno/alumno.pp",
+                "data/data.pp",           
             ],
             "group": {
                 "kind": "build",

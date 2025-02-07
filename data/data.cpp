@@ -1,4 +1,9 @@
 #include "data.h"
+#include <iomanip>
+#include <fstream>
+#include <sstream>
+#include <iostream>
+#include <unordered_set>
 
 std::vector<Alumno> Data::leerAlumnos(const std::string &ruta_archv){
     std::vector<Alumno> preins;
@@ -14,9 +19,9 @@ std::vector<Alumno> Data::leerAlumnos(const std::string &ruta_archv){
         std::istringstream stream(linea);
         std::string nombrecompleto,dni,correo,grado,uni,destino,plansinscrito;
 
-        if(std::getline(stream,nombrecompleto,",") && std::getline(stream,dni,",") && 
-            std::getline(stream,correo,",") && std::getline(stream,grado,",") &&
-            std::getline(stream,uni,",") && std::getline(stream,destino,",") && std::getline(stream,plansinscrito,",")){
+        if(std::getline(stream,nombrecompleto,',') && std::getline(stream,dni,',') && 
+            std::getline(stream,correo,',') && std::getline(stream,grado,',') &&
+            std::getline(stream,uni,',') && std::getline(stream,destino,',') && std::getline(stream,plansinscrito,',')){
                 preins.emplace_back(nombrecompleto,dni,correo,grado,uni,destino,plansinscrito);
             }
     }
@@ -35,13 +40,13 @@ void Data::VerterMatriculas(const std::string &rt, const std::vector<Alumno> &al
         archv.close();
     }
 
-    std::ofstream archv(rt,std::ios::app);
-    if(!archivo.is_open()){
+    std::ofstream archv2(rt,std::ios::app);
+    if(!archv2.is_open()){
         std::cerr<<"ERROR intentando guardar los matriculados\n";
         return;
     }
 
-    for(const auto& alumno : alumnos){
+    for(auto alumno : alumnos){
         if((alumno.GetPlanIns() == "PLAN INFORMATICA" || alumno.GetPlanIns() == "PLAN BIOTECNOLOGIA" || alumno.GetPlanIns() == "PLAN MATEMATICAS")){
             std::ostringstream datosmatricula;
             datosmatricula << alumno.GetNombre() << "," << alumno.GetDni() << "," << alumno.GetCorreo() << ","
@@ -51,7 +56,7 @@ void Data::VerterMatriculas(const std::string &rt, const std::vector<Alumno> &al
             }
         }
     }
-    archivo.close();
+    archv2.close();
     std::cout<<"Se han guardado las matriculas con exito en el fichero" << rt << "\n";
 }
 
@@ -65,16 +70,16 @@ void Data::listarMatriculas(const std::string &rt){
     std::cout<<"\n ------ MATRICULADOS ------ \n";
     std::cout<<"Los datos mostrados son los siguientes en este orden: ";
     std::cout<<std::left<<std::setw(25) << "Nombre" << std::setw(25) <<std::setw(25) << "DNI" <<std::setw(25) << "Correo"
-                        <<std::setw(25) << "Grado" <<std::setw(25) << "Centro" <<std::setw(25) << "Universidad de Destino" << "Plan de convalidacion\n" 
+                        <<std::setw(25) << "Grado" <<std::setw(25) << "Centro" <<std::setw(25) << "Universidad de Destino" << "Plan de convalidacion\n"; 
     std::cout<<"------------------------------\n";
 
     std::string line;
-    while(std::getline(archivo,linea)){
-        std::istringstream stream(linea);
+    while(std::getline(archv,line)){
+        std::istringstream stream(line);
         std::string nombre,dni,correo,grado,uni,destino,plan;
 
-        if(std::getline(stream,nombre,",")&&std::getline(stream,dni,",")&&std::getline(stream,correo,",")&&
-            std::getline(stream,grado,",")&&std::getline(stream,uni,",")&&std::getline(stream,destino,",")&&std::getline(stream,plan,",")){
+        if(std::getline(stream,nombre,',')&&std::getline(stream,dni,',')&&std::getline(stream,correo,',')&&
+            std::getline(stream,grado,',')&&std::getline(stream,uni,',')&&std::getline(stream,destino,',')&&std::getline(stream,plan,',')){
             
             std::cout<<std::left<<std::setw(25)<<nombre<<std::setw(25)<<dni<<std::setw(25)<<correo
                                 <<std::setw(25)<<grado<<std::setw(25)<<uni<<std::setw(25)<<destino

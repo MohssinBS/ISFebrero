@@ -24,7 +24,7 @@ int main(){
     }
 
     std::vector<Alumno> matriculas;
-    for(const auto& alumno : preins){
+    for(auto alumno : preins){
         if(alumno.GetPlanIns()=="PLAN INFORMATICA"||alumno.GetPlanIns()=="PLAN BIOTECNOLOGIA"||alumno.GetPlanIns()=="PLAN MATEMATICAS"){
             matriculas.push_back(alumno);
         }
