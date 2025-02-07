@@ -46,7 +46,7 @@ void Data::VerterMatriculas(const std::string &rt, const std::vector<Alumno> &al
         return;
     }
 
-    for(auto alumno : alumnos){
+    for(const auto& alumno : alumnos){
         if((alumno.GetPlanIns() == "PLAN INFORMATICA" || alumno.GetPlanIns() == "PLAN BIOTECNOLOGIA" || alumno.GetPlanIns() == "PLAN MATEMATICAS")){
             std::ostringstream datosmatricula;
             datosmatricula << alumno.GetNombre() << "," << alumno.GetDni() << "," << alumno.GetCorreo() << ","
@@ -68,9 +68,14 @@ void Data::listarMatriculas(const std::string &rt){
     }
 
     std::cout<<"\n ------ MATRICULADOS ------ \n";
-    std::cout<<"Los datos mostrados son los siguientes en este orden: ";
-    std::cout<<std::left<<std::setw(25) << "Nombre" << std::setw(25) <<std::setw(25) << "DNI" <<std::setw(25) << "Correo"
-                        <<std::setw(25) << "Grado" <<std::setw(25) << "Centro" <<std::setw(25) << "Universidad de Destino" << "Plan de convalidacion\n"; 
+    std::cout<<"Los datos mostrados son los siguientes en este orden: \n";
+    std::cout<<"Nombre\n"
+            << "DNI\n"
+            << "Correo\n"
+            << "Grado\n" 
+            << "Centro\n" 
+            << "Universidad de Destino\n" 
+            << "Plan de convalidacion\n"; 
     std::cout<<"------------------------------\n";
 
     std::string line;
@@ -81,9 +86,19 @@ void Data::listarMatriculas(const std::string &rt){
         if(std::getline(stream,nombre,',')&&std::getline(stream,dni,',')&&std::getline(stream,correo,',')&&
             std::getline(stream,grado,',')&&std::getline(stream,uni,',')&&std::getline(stream,destino,',')&&std::getline(stream,plan,',')){
             
-            std::cout<<std::left<<std::setw(25)<<nombre<<std::setw(25)<<dni<<std::setw(25)<<correo
-                                <<std::setw(25)<<grado<<std::setw(25)<<uni<<std::setw(25)<<destino
-                                <<plan<<"\n";
+            std::cout<<nombre
+                    <<"\n"
+                    <<dni
+                    <<"\n"
+                    <<correo
+                    <<"\n"
+                    <<grado
+                    <<"\n"
+                    <<uni
+                    <<"\n"
+                    <<destino
+                    <<"\n"
+                    <<plan<<"\n";
         }
     }
     archv.close();

@@ -28,16 +28,15 @@
             "type": "shell",
             "command": "g++",
             "args": [
-                
                 "-std=c++17",
                 "-o","program_test",
                 "-I","alumno",
                 "-I","data",
                 "-I","tests",
                 "-Wall","-Werror",
-                "tests/tests.pp",
-                "alumno/alumno.pp",
-                "data/data.pp",           
+                "tests/tests.cpp",
+                "alumno/alumno.cpp",
+                "data/data.cpp",           
             ],
             "group": {
                 "kind": "build",
