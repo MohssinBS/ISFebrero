@@ -50,7 +50,7 @@ void Data::VerterMatriculas(const std::string &rt, const std::vector<Alumno> &al
         if((alumno.GetPlanIns() == "PLAN INFORMATICA" || alumno.GetPlanIns() == "PLAN BIOTECNOLOGIA" || alumno.GetPlanIns() == "PLAN MATEMATICAS")){
             std::ostringstream datosmatricula;
             datosmatricula << alumno.GetNombre() << "," << alumno.GetDni() << "," << alumno.GetCorreo() << ","
-                            << alumno.GetGrado() << "," << alumno.GetUni() << "," << alumno.GetDestino() << alumno.GetPlanIns();
+                            << alumno.GetGrado() << "," << alumno.GetUni() << "," << alumno.GetDestino() << "," << alumno.GetPlanIns();
             if(matriculas.find(datosmatricula.str())==matriculas.end()){
                 archv2<<datosmatricula.str()<<"\n";
                 matriculas.insert(datosmatricula.str());
@@ -84,24 +84,17 @@ void Data::listarMatriculas(const std::string &rt){
         std::istringstream stream(line);
         std::string nombre,dni,correo,grado,uni,destino,plan;
 
-        if(std::getline(stream,nombre,',')&&std::getline(stream,dni,',')&&std::getline(stream,correo,',')&&
-            std::getline(stream,grado,',')&&std::getline(stream,uni,',')&&std::getline(stream,destino,',')&&std::getline(stream,plan,',')){
-            
-            std::cout<<nombre
-                    <<"\n"
-                    <<dni
-                    <<"\n"
-                    <<correo
-                    <<"\n"
-                    <<grado
-                    <<"\n"
-                    <<uni
-                    <<"\n"
-                    <<destino
-                    <<"\n"
-                    <<plan<<"\n";
+        if(std::getline(stream,nombre,',') &&
+            std::getline(stream,dni,',') &&
+            std::getline(stream,correo,',') &&
+            std::getline(stream,grado,',') &&
+            std::getline(stream,uni,',') &&
+            std::getline(stream,destino,',') &&
+            std::getline(stream,plan,',')){
+            std::cout<<nombre<<"\n"<<dni<<"\n"<<correo <<"\n"<<grado<<"\n"<<uni<<"\n"<<destino<<"\n"<<plan<<"\n";
         }
     }
+    std::cout<<"------------------------------------------------------------\n"
     archv.close();
 }
 
