@@ -14,7 +14,7 @@ void mostrarMenu(){
 
 int main(){
     const std::string rutaPreins = "data/preinscritos.txt";
-    const std::string rutaMatri = "data/matriculados.txt";
+    const std::string rutaMatri = "data/matriculaciones.txt";
 
     std::vector<Alumno> preins = Data::leerAlumnos(rutaPreins);
 
@@ -24,7 +24,7 @@ int main(){
     }
 
     std::vector<Alumno> matriculas;
-    for(auto alumno : preins){
+    for(const auto& alumno : preins){
         if(alumno.GetPlanIns()=="PLAN INFORMATICA"||alumno.GetPlanIns()=="PLAN BIOTECNOLOGIA"||alumno.GetPlanIns()=="PLAN MATEMATICAS"){
             matriculas.push_back(alumno);
         }
