@@ -21,7 +21,9 @@ class Alumno{
         std::string GetDni(){return dni;}
         std::string GetCorreo(){return correo;}
         std::string GetGrado(){return grado;}
-        std::string GetUni(){return destino;}
+        std::string GetUni(){return uni;}
+        std::string GetDestino(){return destino;}
+        std::string GetPlanIns(){return planinscrito;}
 
         std::string MatricularAlumno(){}
         
