@@ -57,7 +57,7 @@ void Data::VerterMatriculas(const std::string &rt, const std::vector<Alumno> &al
         }
     }
     archv2.close();
-    std::cout<<"Se han guardado las matriculas con exito en el fichero" << rt << "\n";
+    std::cout<<"Se han guardado las matriculas con exito en el fichero " << rt << "\n";
 }
 
 void Data::listarMatriculas(const std::string &rt){
