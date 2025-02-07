@@ -1,16 +1,19 @@
 #ifndef DATA_H
 #define DATA_H
 
-#include <string>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <unordered_set>
 #include <vector>
+#include <iomanip>
 #include "alumno.h"
-#include "plan.h"
 
 class Data{
     public:
         static std::vector<Alumno> leerAlumnos(const std::string& ruta_archv);
-        static std::vector<Plan> leerPlanes(const std::string& ruta_archv);
-        void MostrarPlanes();
+        static void VerterMatriculas(const std::string& rt,const std::vector<Alumno>& matriculados);
+        static void listarMatriculas(const std::string& rt);
 };
 
 #endif

@@ -12,19 +12,18 @@ class Alumno{
         std::string correo;
         std::string grado;
         std::string uni;
-        std::map<std::string,std::string> planesinscritos;
+        std::string destino;
+        std::string planinscrito;
     public:
-        Alumno(const std::string& nombrecompleto,const std::string& dni,const std::string& correo,const std::string& grado,const std::string& uni);
+        Alumno(const std::string& nombrecompleto,const std::string& dni,const std::string& correo,const std::string& grado,const std::string& uni,const std::string& destino,const std::string& planinscrito);
 
         std::string GetNombre(){return nombrecompleto;}
         std::string GetDni(){return dni;}
         std::string GetCorreo(){return correo;}
         std::string GetGrado(){return grado;}
-        std::string GetUni(){return uni;}
+        std::string GetUni(){return destino;}
 
-        void MostrarIns(){}
-        void AnadirIns(std::string id,std::string destino){}
-        void MatricularAlumno(){}
+        std::string MatricularAlumno(){}
         
 };
 

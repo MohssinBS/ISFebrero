@@ -4,14 +4,14 @@
 Alumno::Alumno(const std::string &nombrecompleto, 
                 const std::string &dni,
                 const std::string &correo, 
-                const std::string &grado, 
-                const std::string &uni) : nombrecompleto(nombrecompleto),dni(dni),correo(correo),grado(grado),uni(uni){}
+                const std::string &grado,
+                const std::string &uni, 
+                const std::string &destino,
+                const std::string &planinscrito) : nombrecompleto(nombrecompleto),dni(dni),correo(correo),grado(grado),uni(uni),destino(destino),planinscrito(planinscrito){}
 
-//Funcion para mostrar las inscripciones del alumno
-void Alumno::MostrarIns(){}
-
-//Funciopn para inscribir al alumno en un plan SICUE
-void Alumno::AnadirIns(){}
 
 //Funcion para matricular a un alummo
-void Alumno::MatricularAlumno(std::string nombredni,std::string id,std::string destino){}
+std::string Alumno::MatricularAlumno(){
+    return nombrecompleto + "," + dni + "," + correo + "," + grado + "," + uni + "," + destino + "," + planinscrito;
+}
+
