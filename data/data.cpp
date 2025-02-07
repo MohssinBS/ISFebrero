@@ -52,6 +52,7 @@ void Data::VerterMatriculas(const std::string &rt, const std::vector<Alumno> &al
             datosmatricula << alumno.GetNombre() << "," << alumno.GetDni() << "," << alumno.GetCorreo() << ","
                             << alumno.GetGrado() << "," << alumno.GetUni() << "," << alumno.GetDestino() << alumno.GetPlanIns();
             if(matriculas.find(datosmatricula.str())==matriculas.end()){
+                archv2<<datosmatricula.str()<<"\n";
                 matriculas.insert(datosmatricula.str());
             }
         }

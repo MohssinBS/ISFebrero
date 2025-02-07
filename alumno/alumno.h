@@ -15,7 +15,7 @@ class Alumno{
         std::string destino;
         std::string planinscrito;
     public:
-        Alumno( std::string& nombrecompleto, std::string& dni, std::string& correo, std::string& grado, std::string& uni, std::string& destino, std::string& planinscrito);
+        Alumno(const std::string& nombrecompleto,const std::string& dni,const std::string& correo, const std::string& grado,const std::string& uni,const std::string& destino,const std::string& planinscrito);
 
         std::string GetNombre()const{return nombrecompleto;}
         std::string GetDni()const{return dni;}
