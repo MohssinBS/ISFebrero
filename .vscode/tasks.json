@@ -1,0 +1,52 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar proyecto main",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-o","program",
+                "-I","alumno",
+                "-I","data",
+                "-Wall","-Werror",
+                "main/main.cc",
+                "alumno/alumno.cc",
+                "data/data.cc",
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compila proyecto principal"
+        },
+        {
+            "label": "Compila tests",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-o","program_test",
+                "-I","alumno",
+                "-I","data",
+                "-I","tests",
+                "-Wall","-Werror",
+                "tests/tests.cc",
+                "alumno/alumno.cc",
+                "data/data.cc",           
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compila tests"
+        }
+    ]
+
+
+
+
+}
