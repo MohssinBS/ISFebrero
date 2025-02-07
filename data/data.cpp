@@ -92,9 +92,12 @@ void Data::listarMatriculas(const std::string &rt){
             std::getline(stream,destino,',') &&
             std::getline(stream,plan,',')){
             std::cout<<nombre<<"\n"<<dni<<"\n"<<correo <<"\n"<<grado<<"\n"<<uni<<"\n"<<destino<<"\n"<<plan<<"\n";
+            std::cout<<"*************************\n";
+
+            
         }
     }
-    std::cout<<"------------------------------------------------------------\n"
+    std::cout<<"------------------------------------------------------------\n";
     archv.close();
 }
 

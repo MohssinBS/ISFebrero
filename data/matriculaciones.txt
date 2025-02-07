@@ -1,2 +1,2 @@
-Mohssin Bassat,04780813X,o22basim@uco.es,Grado Ing.Informatica,Universidad de Cordoba,Universidad de GranadaPLAN INFORMATICA
-Miriam Lopez,5690396L,b23logam@uma.es,Grado Biotecnologia,Universidad de Malaga,Universidad de CordobaPLAN BIOTECNOLOGIA
+Mohssin Bassat,04780813X,o22basim@uco.es,Grado Ing.Informatica,Universidad de Cordoba,Universidad de Granada,PLAN INFORMATICA
+Miriam Lopez,5690396L,b23logam@uma.es,Grado Biotecnologia,Universidad de Malaga,Universidad de Cordoba,PLAN BIOTECNOLOGIA
