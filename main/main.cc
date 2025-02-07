@@ -1,4 +1,4 @@
-#include "alummno.h"
+#include "alumno.h"
 #include "data.h"
 #include <vector>
 #include <iostream>
